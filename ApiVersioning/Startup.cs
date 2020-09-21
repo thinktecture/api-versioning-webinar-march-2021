@@ -36,6 +36,8 @@ namespace ApiVersioning
 
             services.AddApiVersioning(c => {
                 c.ReportApiVersions = true;
+                c.DefaultApiVersion = new ApiVersion(1, 0);
+                c.AssumeDefaultVersionWhenUnspecified = true;
             });
             services.AddVersionedApiExplorer();
         }
