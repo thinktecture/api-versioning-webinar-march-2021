@@ -21,5 +21,13 @@ namespace ApiVersioning
         {
             return Ok("2");
         }
+
+        [MapToApiVersion("1.0")]
+		[MapToApiVersion("2.0")]
+		[HttpGet("Test")]
+		public ActionResult<string> Test(ApiVersion version)
+		{
+			return Ok(version.ToString());
+		}
     }
 }
