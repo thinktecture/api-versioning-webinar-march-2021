@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiVersioning
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
 
     public class SampleController : ControllerBase
@@ -16,7 +16,7 @@ namespace ApiVersioning
     }
 
     [ApiController]
-    [Route("Sample")]
+    [Route("api/v{version:apiVersion}/Sample")]
     [ApiVersion("2.0")]
     public class Sample2Controller : ControllerBase
     {

@@ -36,7 +36,6 @@ namespace ApiVersioning
 
             services.AddApiVersioning(c => {
                 c.ReportApiVersions = true;
-                c.ApiVersionReader = new MediaTypeApiVersionReader();
             });
             services.AddVersionedApiExplorer();
         }
