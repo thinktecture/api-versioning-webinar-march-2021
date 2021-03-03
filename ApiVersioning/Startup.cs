@@ -30,8 +30,11 @@ namespace ApiVersioning
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiVersioning", Version = "v1" });
+                c.SwaggerDoc("1.0", new OpenApiInfo { Title = "ApiVersioning", Version = "v1" });
             });
+
+            services.AddApiVersioning();
+            services.AddVersionedApiExplorer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +44,7 @@ namespace ApiVersioning
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiVersioning v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/1.0/swagger.json", "ApiVersioning v1"));
             }
 
             app.UseHttpsRedirection();
