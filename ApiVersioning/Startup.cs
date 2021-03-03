@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,7 +34,9 @@ namespace ApiVersioning
                 c.SwaggerDoc("1.0", new OpenApiInfo { Title = "ApiVersioning", Version = "v1" });
             });
 
-            services.AddApiVersioning();
+            services.AddApiVersioning(c => {
+                c.ReportApiVersions = true;
+            });
             services.AddVersionedApiExplorer();
         }
 
