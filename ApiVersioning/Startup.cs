@@ -33,7 +33,9 @@ namespace ApiVersioning
                 c.SwaggerDoc("1.0", new OpenApiInfo { Title = "ApiVersioning", Version = "v1" });
             });
 
-            services.AddApiVersioning();
+            services.AddApiVersioning(c => {
+                c.ReportApiVersions = true;
+            });
             services.AddVersionedApiExplorer();
         }
 
