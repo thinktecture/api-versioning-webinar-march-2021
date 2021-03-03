@@ -15,3 +15,9 @@ cd ApiVersioning
 dotnet add package Microsoft.AspNetCore.Mvc.Versioning -v 5.0.0
 dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer -v 5.0.0
 ```
+
+## Branch add-basic-versioning
+
+1. Versionierungs-Funktionalität zum Startup hinzugefügt und dem Standard-Controller über ein Attribut die Version 1.0 zugewiesen.
+2. Zwei neue Beispiel-Controller hinzugefügt mit einem versionierten Endpunkt. 
+3. Neuer Controller mit zwei unterschiedlichen Versionen des gleichen Endpunkts hinzugefügt.
