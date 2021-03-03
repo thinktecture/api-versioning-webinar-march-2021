@@ -5,7 +5,7 @@ namespace ApiVersioning
    	[ApiVersion("1.0")]
 	[ApiVersion("2.0")]
     [ApiController]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("[controller]")]
     public class ExampleController : ControllerBase
     {
         [HttpGet("Version")]
@@ -21,5 +21,13 @@ namespace ApiVersioning
         {
             return Ok("2");
         }
+
+        [MapToApiVersion("1.0")]
+		[MapToApiVersion("2.0")]
+		[HttpGet("Test")]
+		public ActionResult<string> Test(ApiVersion version)
+		{
+			return Ok(version.ToString());
+		}
     }
 }
